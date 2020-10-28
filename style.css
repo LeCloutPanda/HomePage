@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     height: 100vh;
-    font-family: "Comic Sans MS", cursive, sans-serif;
     background-color: #23272a; /* For browsers that do not support gradients */
     /*background-image: linear-gradient(0deg, #706677, #565264);*/
 }
@@ -24,6 +23,8 @@
 }
 
 .navagationBar img {
+    display: block;
+
     margin-left: auto;
     margin-right: auto;
 
@@ -38,8 +39,6 @@
     padding-bottom: 5px;
 
     border-radius: 10px;
-
-    display: block;
 }
 
 .navagationBar button {
@@ -57,10 +56,70 @@
 
     width: 100px;
 
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
     background-color: #7289da;
     color: #ffffff;
 }
 
 .navagationBar button:hover {
     background-color: #9fb0ed;
+}
+
+.pDropdownContent {
+    display: none;
+    position: relative;
+}
+
+.pDropdownContent a {
+    background-color: #7289da;
+    color: #ffffff;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-radius: 5px;
+    border-style: hidden;
+
+    display: block;
+}
+
+.pDropdownContent a:hover {background-color: #9fb0ed}
+
+.pDropdown:hover .pDropdownContent {
+    display: block;
+}
+
+.sDropdownContent {
+    display: none;
+    position: relative;
+}
+
+.sDropdownContent a {
+    background-color: #7289da;
+    color: #ffffff;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-radius: 5px;
+    border-style: hidden;
+
+    display: block;
+}
+
+.sDropdownContent a:hover {background-color: #9fb0ed}
+
+.sDropdown:hover .sDropdownContent {
+    display: block;
 }
