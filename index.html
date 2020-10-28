@@ -1,48 +1,65 @@
+
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="index" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="generalStyle.css">
         <link rel="stylesheet" href="interactiveStyle.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+        <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto&display=swap">
+
     </head>
 
     <body class="body">
-        <div class="navagationBar">
-            <img src="https://github.com/LeCloutPanda.png?size=100" onclick=openGithub()></img>
+        <div id="main">
+
+        </div>
+
+        <div id="sideBar" class="navagationBar">
+            <img src="https://github.com/LeCloutPanda.png?size=500" onclick=openGithub()></img>
+
             <button>Home</button>
-    
             <div class="pDropdown">
-                <button class="pDropdownButton">Projects</button>
+                <button id="test" class="pDropdownButton" onclick=toggleProjects()>Projects</button>
 
-                <div class="pDropdownContent">
-                    <button>Link 1</button>
-                    <button>Link 2</button>
-                    <button>Link 3</button>
-
+                <div id="pDropdownId" class="pDropdownContent">
+                    <button onclick="customHREF('test.html')">Link 1</button>
+                    <button onclick="customHREF('test.html')">Link 2</button>
+                    <button onclick="customHREF('test.html')">Link 3</button>
                 </div>
             </div>
 
             <div class="sDropdown">
-                <button class="sDropdownButton">Socials</button>
+                <button class="sDropdownButton" onclick=toggleSocials()>Socials</button>
 
-                <div class="sDropdownContent">
-                    <button>Social 1</button>
-                    <button>Social 2</button>
-                    <button>Social 3</button>
+                <div id="sDropdownId" class="sDropdownContent">
+                    <button onclick="customHREF('test.html')">Social 1</button>
+                    <button onclick="customHREF('test.html')">Social 2</button>
+                    <button onclick="customHREF('test.html')">Social 3</button>
                 </div>
             </div>
-        </div>
 
-        <div id="main">
-
+            <button>About</button>
         </div>
 
         <script>
             function openGithub(){
                 window.open('https://github.com/LeCloutPanda', '_blank');
             }
+
+            function toggleProjects() {
+                document.getElementById("pDropdownId").classList.toggle("show");
+                document.getElementById("test").classList.toggle("setColor");
+            }
+
+            function toggleSocials() {
+                document.getElementById("sDropdownId").classList.toggle("show");
+            }
+
+            function customHREF(url) {
+                window.open(url, '_blank');
+            }
         </script>
-        
     </body>
 </html> 
