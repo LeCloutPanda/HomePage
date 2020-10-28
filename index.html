@@ -1,1 +1,29 @@
-<h1>Test</h1>
+<!doctype html>
+<html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="style.css">
+        </head>
+
+        <body class="body">
+            <div class="navagationBar">
+                <img src="https://github.com/LeCloutPanda.png?size=100" onclick=openGithub()></img>
+                <button>Home</button>
+                <button>Projects</button>
+            </div>
+
+            <div id="main">
+
+            </div>
+
+            <script>
+                function openGithub(){
+                    window.open(
+                        'https://github.com/LeCloutPanda',
+                        '_blank' // <- This is what makes it open in a new window.
+                    );
+                }
+            </script>
+        </body>
+</html> 
