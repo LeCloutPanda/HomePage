@@ -20,23 +20,20 @@
             <img src="https://github.com/LeCloutPanda.png?size=500" onclick=openGithub()></img>
 
             <button>Home</button>
-            <div class="pDropdown">
-                <button id="test" class="pDropdownButton" onclick=toggleProjects()>Projects</button>
+            <div class="pDd">
+                <button id="pDdBId" class="pDdB" onclick=toggleProjects()>Projects</button>
 
-                <div id="pDropdownId" class="pDropdownContent">
-                    <button onclick="customHREF('test.html')">Link 1</button>
-                    <button onclick="customHREF('test.html')">Link 2</button>
-                    <button onclick="customHREF('test.html')">Link 3</button>
+                <div id="pDdId" class="pDdC">
+                    <button onclick="customHREFBlank('test.html')">Test site</button>
                 </div>
             </div>
 
-            <div class="sDropdown">
-                <button class="sDropdownButton" onclick=toggleSocials()>Socials</button>
+            <div class="sDd">
+                <button id="sDdBId" class="sDdB" onclick=toggleSocials()>Socials</button>
 
-                <div id="sDropdownId" class="sDropdownContent">
-                    <button onclick="customHREF('test.html')">Social 1</button>
-                    <button onclick="customHREF('test.html')">Social 2</button>
-                    <button onclick="customHREF('test.html')">Social 3</button>
+                <div id="sDdId" class="sDdC">
+                    <button onclick="customHREFSelf('https://www.youtube.com/channel/UCDjft9tB5N_u2fQGm0I_pew?view_as=subscriber')">Youtube</button>
+                    <button onclick="customHREFSelf('https://www.instagram.com/lecloutpanda_vfx/')">Instagram</button>
                 </div>
             </div>
 
@@ -44,20 +41,41 @@
         </div>
 
         <script>
+            var toggledProjects = false;
+            var toggledSocials = false;
+
             function openGithub(){
                 window.open('https://github.com/LeCloutPanda', '_blank');
             }
 
             function toggleProjects() {
-                document.getElementById("pDropdownId").classList.toggle("show");
-                document.getElementById("test").classList.toggle("setColor");
+                document.getElementById("pDdId").classList.toggle("show");
+                
+                toggledProjects = !toggledProjects;
+            
+                if(toggledProjects == true)
+                    document.getElementById("pDdBId").style.background = "#9fb0ed";
+                else
+                    document.getElementById("pDdBId").style.background = "#7289da";
+            
             }
 
             function toggleSocials() {
-                document.getElementById("sDropdownId").classList.toggle("show");
+                document.getElementById("sDdId").classList.toggle("show");
+
+                toggledSocials = !toggledSocials;
+            
+                if(toggledSocials == true)
+                    document.getElementById("sDdBId").style.background = "#9fb0ed";
+                else
+                    document.getElementById("sDdBId").style.background = "#7289da";
             }
 
-            function customHREF(url) {
+            function customHREFSelf(url) {
+                window.open(url, '_self');
+            }
+
+            function customHREFBlank(url) {
                 window.open(url, '_blank');
             }
         </script>

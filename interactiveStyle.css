@@ -1,9 +1,9 @@
-.pDropdownContent {
+.pDdC {
     display: none;
     position: relative;
 }
 
-.pDropdownContent a {
+.pDdC a {
     background-color: #7289da;
     color: #ffffff;
     
@@ -19,12 +19,12 @@
     border-style: hidden;
 }
 
-.sDropdownContent {
+.sDdC {
     display: none;
     position: relative;
 }
 
-.sDropdownContent a {
+.sDdC a {
     background-color: #7289da;
     color: #ffffff;
     
