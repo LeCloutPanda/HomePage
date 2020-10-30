@@ -8,7 +8,7 @@
     /*background-image: linear-gradient(0deg, #706677, #565264);*/
 }
 
-#tetris {
+#tetrisCanvas {
     position: absolute;
     top:0;
     bottom: 0;

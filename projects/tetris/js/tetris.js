@@ -1,5 +1,5 @@
-const canvas = document.getElementById('tetris');
-const context = canvas.getContext('2d');
+canvas = document.getElementById("tetrisCanvas");
+context = canvas.getContext('2d');
 
 context.scale(40, 40);
 
