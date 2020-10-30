@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
     <head>
@@ -8,7 +7,7 @@
         <link rel="stylesheet" href="interactiveStyle.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
         <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto&display=swap">
-
+        <script src="code.js"></script>
     </head>
 
     <body class="body">
@@ -18,13 +17,13 @@
 
         <div id="sideBar" class="navagationBar">
             <img src="https://github.com/LeCloutPanda.png?size=500" onclick=openGithub()></img>
-
             <button>Home</button>
+
             <div class="pDd">
                 <button id="pDdBId" class="pDdB" onclick=toggleProjects()>Projects</button>
 
                 <div id="pDdId" class="pDdC">
-                    <button onclick="customHREFBlank('test.html')">Test site</button>
+                    <button onclick="customHREFSelf('Games/Tetris/tetris.html')">Tetris</button>
                 </div>
             </div>
 
@@ -39,45 +38,5 @@
 
             <button>About</button>
         </div>
-
-        <script>
-            var toggledProjects = false;
-            var toggledSocials = false;
-
-            function openGithub(){
-                window.open('https://github.com/LeCloutPanda', '_blank');
-            }
-
-            function toggleProjects() {
-                document.getElementById("pDdId").classList.toggle("show");
-                
-                toggledProjects = !toggledProjects;
-            
-                if(toggledProjects == true)
-                    document.getElementById("pDdBId").style.background = "#9fb0ed";
-                else
-                    document.getElementById("pDdBId").style.background = "#7289da";
-            
-            }
-
-            function toggleSocials() {
-                document.getElementById("sDdId").classList.toggle("show");
-
-                toggledSocials = !toggledSocials;
-            
-                if(toggledSocials == true)
-                    document.getElementById("sDdBId").style.background = "#9fb0ed";
-                else
-                    document.getElementById("sDdBId").style.background = "#7289da";
-            }
-
-            function customHREFSelf(url) {
-                window.open(url, '_self');
-            }
-
-            function customHREFBlank(url) {
-                window.open(url, '_blank');
-            }
-        </script>
     </body>
 </html> 
