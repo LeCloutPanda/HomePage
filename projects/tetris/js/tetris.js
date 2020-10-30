@@ -1,8 +1,3 @@
-canvas = document.getElementById("tetrisCanvas");
-context = canvas.getContext('2d');
-
-context.scale(40, 40);
-
 let dropCounter = 0;
 let dropInterval = 1000;
 
@@ -10,6 +5,11 @@ let lastTime = 0;
 
 let isStarted = false;
 let isPaused = false;
+
+canvas = document.getElementById("tetrisCanvas");
+context = canvas.getContext('2d');
+
+context.scale(40, 40);
 
 const arena = createMatrix(12, 20);
 
