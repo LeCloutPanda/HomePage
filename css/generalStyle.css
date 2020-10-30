@@ -1,0 +1,82 @@
+/* Avaliable fonts
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+*/
+
+.body
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #23272a; /* For browsers that do not support gradients */
+    
+    /*background-image: linear-gradient(0deg, #706677, #565264);*/
+}
+
+.navagationBar
+{
+    position: relative;
+    background-color: #7289da;
+
+    height: auto;
+
+    margin: 0;
+
+    width: 130px;
+    padding-bottom: 5px;
+
+    border-radius: 10px;
+}
+
+.navagationBar img {
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 120px;
+    height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    border-radius: 10px;
+}
+
+.navagationBar button {
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #000000;
+
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    border-radius: 5px;
+    border-style: hidden;
+    outline: 0px;
+
+    width: 120px;
+
+    background-color: #7289da;
+    color: #ffffff;
+    transition: 0.2s;
+}
+
+.navagationBar button:hover {
+    background-color: #9fb0ed;
+}
+
+h1 {
+    text-align: center;
+    top: 25%;
+}
