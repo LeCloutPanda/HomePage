@@ -6,6 +6,14 @@ let IH = window.innerHeight;
 
 var scene, camera, renderer;
 
+var boxes = [];
+var lights = [ 
+    new THREE.PointLight(0xffffff, .75, 100),
+    new THREE.PointLight(0xffffff, .75, 100),
+    new THREE.PointLight(0xffffff, .75, 100),
+    new THREE.PointLight(0xffffff, .75, 100)
+];
+
 function init() {
     //Creating scene and camera
     scene = new THREE.Scene();
@@ -43,7 +51,7 @@ function init() {
         camera.updateProjectionMatrix();
     });
 
-    initPointLights(scene);
+    initDirectionalLight(scene);
 
     //Create a basic shape and assign textures and materials
     var boxGeometry = new THREE.BoxGeometry(1, 1, 1);
@@ -64,11 +72,6 @@ function init() {
     box.receiveShadow = false; //default
     scene.add(box);
 
-    var box2Geometry = new THREE.SphereGeometry(0.25, 64, 64);
-    var box2Material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
-    box2 = new THREE.Mesh(box2Geometry, box2Material);
-    scene.add(box2);
-
     const planeGeometry = new THREE.PlaneGeometry(25, 25, 64);
     const planeMaterial = new THREE.MeshStandardMaterial({ map: new THREE.TextureLoader().load("textures/me.png"), side: THREE.DoubleSide });
     const plane = new THREE.Mesh(planeGeometry, planeMaterial);
@@ -77,25 +80,9 @@ function init() {
     scene.add( plane );
 }
 
-var box2;
-
-var lights = [ 
-    new THREE.PointLight(0xffffff, .75, 100)
-];
-let positions = [
-    [2, 2, 2]
-];
-
-let distance = 2;
-
 // Update logic
 var update = function (time) {
-   lights[0].position.set(Math.sin(time / 1000) * distance,
-   2.5,
-   Math.cos(time / 1000) * distance);
 
-   box2.position.set(lights[0].position.x, lights[0].position.y, lights[0].position.z);
-   console.log(time);
 };
 // Draw scene
 var render = function () {
@@ -110,16 +97,15 @@ var loop = function (time = 0) {
 };
 
 function initDirectionalLight(scene) {
-        //Create a DirectionalLight and turn on shadows for the light
-        const light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
-        light.position.set( 2, 2, 2 ); //default; light shining from top
-        light.castShadow = true; // default false
-        scene.add( light );
+    //Create a DirectionalLight and turn on shadows for the light
+    const light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
+    light.position.set( 2, 2, 2 ); //default; light shining from top
+    light.castShadow = true; // default false
+    scene.add( light );
 }
 
 function initPointLights(scene) {
     for (let i = 0; i < lights.length; i++) {
-        lights[i].position.set(positions[i][0], positions[i][1], positions[i][2])
         lights[i].castShadow = true;
 
         console.log(lights[i].position);
@@ -131,6 +117,23 @@ function initPointLights(scene) {
         lights[i].shadow.mapSize.height = 512; // default
         lights[i].shadow.camera.near = 0.5; // default
         lights[i].shadow.camera.far = 500; // default
+
+        var boxGeometry = new THREE.SphereGeometry(0.25, 64, 64);
+        var boxMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+        boxes.push(new THREE.Mesh(boxGeometry, boxMaterial));
+        scene.add(boxes[i]);
+
+        //let theta = ((time / 200) * (Math.PI * 2) / lights.length) * i;
+        let theta = (Math.PI * 2 / lights.length * i);
+        let mult = 5 * lights.length / Math.PI;
+        let x = Math.cos(theta);
+        let z = Math.sin(theta);
+    
+        lights[i].position.set(x * mult,
+        2.5,
+        z * mult);
+    
+        boxes[i].position.set(lights[i].position.x, lights[i].position.y, lights[i].position.z)
     }
 }
 
