@@ -5,7 +5,7 @@ var toggledSocials = false;
 //Links
 //Projects
 var home = "index.html";
-var tetris = "projects/tetris/tetris.html";
+var tetris = "../projects/tetris/tetris.html";
 var testing = "projects/3d_testing/3d_testing.html";
 //Socials
 var youtube = "https://www.youtube.com/channel/UCDjft9tB5N_u2fQGm0I_pew?view_as=subscriber";
@@ -21,7 +21,7 @@ function addNavBar() {
     \
         <div id="sideBar" class="navagationBar">\
             <img src="https://github.com/LeCloutPanda.png?size=500" onclick=openGithub()></img>\
-            <button onclick="customHREFSelf(home)">Home</button>\
+            <button onclick="console.log(tetris)">Home</button>\
     \
             <div class="pDd">\
                 <button id="pDdBId" class="pDdB" onclick=toggleProjects()>Projects</button>\
