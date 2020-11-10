@@ -4,7 +4,7 @@ let FCP = 1000;
 let IW = window.innerWidth;
 let IH = window.innerHeight;
 
-var scene, camera, renderer;
+var scene, camera, renderer, controls, fbxLoader;
 
 var boxes = [];
 var lights = [ 
@@ -15,6 +15,9 @@ var lights = [
 ];
 
 function init() {
+    //Frame rate etc
+    (function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//mrdoob.github.io/stats.js/build/stats.min.js';document.head.appendChild(script);})()
+
     //Creating scene and camera
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(FOV, IW / IH, NCP, FCP);
@@ -39,8 +42,24 @@ function init() {
     //scene.background = texture;
 
     //Camera
-    var controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
     camera.position.z = 5;    
+
+    //FBX loader
+    fbxLoader = new THREE.FBXLoader();
+    fbxLoader.load(
+        'models/cube.fbx', 
+
+        function(object) {
+            scene.add(object);
+            object.scale.x = object.scale.x / 100;
+            object.scale.y = object.scale.y / 100;
+            object.scale.z = object.scale.z / 100;
+            object.position.set(0, 4, 0);
+
+            object.material = new THREE.MeshStandardMaterial({ color: "red" });
+        }
+    );
 
     //Updating scene when resizing
     window.addEventListener('resize', function() {

@@ -1,15 +1,17 @@
-/* Avaliable fonts
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-*/
+#navBarFrame {
+    width: 100%;
+    height: 100%;
+    border-style: hidden;
+}
 
-.body
+#main   
 {
+    background-color: #23272a; /* For browsers that do not support gradients */
+    overflow: hidden;
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-color: #23272a; /* For browsers that do not support gradients */
-    
+
     /*background-image: linear-gradient(0deg, #706677, #565264);*/
 }
 
@@ -69,14 +71,55 @@
 
     background-color: #7289da;
     color: #ffffff;
-    transition: 0.2s;
 }
 
 .navagationBar button:hover {
     background-color: #9fb0ed;
 }
 
-h1 {
-    text-align: center;
-    top: 25%;
+.pDdC {
+    display: none;
+    position: relative;
 }
+
+.pDdC a {
+    background-color: #7289da;
+    color: #ffffff;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-radius: 5px;
+    border-style: hidden;
+}
+
+.sDdC {
+    display: none;
+    position: relative;
+}
+
+.sDdC a {
+    background-color: #7289da;
+    color: #ffffff;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-radius: 5px;
+    border-style: hidden;
+}
+
+.show {
+    display: block;
+}
+
