@@ -13,8 +13,6 @@ var instagram = "https://www.instagram.com/lecloutpanda_vfx/";
 
 function addNavBar() {
     navBar = document.write('\
-        <link rel="stylesheet" href="css/generalStyle.css">\
-        <link rel="stylesheet" href="css/interactiveStyle.css">\
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">\
         <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto&display=swap">\
         <script src="../../js/global.js" charset="utf-8"></script>\
